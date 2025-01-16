@@ -1,7 +1,24 @@
 ---
-title: "FL Income"
+title: "Homepage"
+execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
-This is a Quarto website.
+```{r}
+#| label: setup
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+library(tidyverse)
+library(tidycensus)
+
+```
+
+```{r}
+fl_income <- read_rds("fl_income.rds")
+fl_income_filtered <- read_rds("fl_income_filtered.rds")
+
+plot(fl_income_filtered["estimate"])
+plot(fl_income["estimate"])
+
+```
