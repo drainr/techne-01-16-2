@@ -14,11 +14,17 @@ library(tidycensus)
 
 ```
 
+# FL Income
 ```{r}
 fl_income <- read_rds("fl_income.rds")
+
+plot(fl_income["estimate"])
+
+```
+
+# SRC Income
+```{r}
 fl_income_filtered <- read_rds("fl_income_filtered.rds")
 
 plot(fl_income_filtered["estimate"])
-plot(fl_income["estimate"])
-
 ```
